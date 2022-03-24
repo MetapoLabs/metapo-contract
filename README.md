@@ -1,8 +1,39 @@
 # Contracts Here
+
+<img src="https://github.com/MetapoLabs/metapo-docs/blob/main/MeTaPo.png?raw=true">
+<br>
+<br>
+We borrowed the staking rules as in DEFI, we call it pointing.
+<br>
+<br>
+When you login, you'll have MetapoBalance according to the total amount of USDT/USDC/DAI/BUSD..,
+the MetapoBalance can't transfer, when your USD balance change, Oracle will get your last USD 
+balance, and set to MetapoBalance, this is the only way to change MetapoBalance. then MetapoBalance
+contract will notify the IBalanceListener contracts, Entry contract and more.
+<br>
+<br>
+When you pressing the like button on an Entry, that is pointing(as staking) MetapoBalance to Entry,
+but your MetapoBalance dosen't change, the Entry records how much you have pointing, and the hot 
+will increase.
+<br>
+<br>
+If your USD balance increase, you have more MetapoBalance for pointing.
+<br>
+<br>
+If your USD balance decrease, your MetapoBalance decrease, the amount that Entry records how much
+you have pointing, maybe larger then your MetapoBalance. So, your pointing Entries need to change
+to unlike(revert-point), and the hot decrease, until the amount of your pointing is less then 
+your MetapoBalance.
+<br>
+<br>
 A basic testing is done, everything goes well, and need out-of-gas testing.
 <br>
 In thinking of out-of-gas, the notify feature may move to offchain, maybe.
 <br>
+<br>
+<br>
+<br>
+
 
 ## MetapoBalance Contract
 Oracle call setBalance() for each account, and it'll notify the IBalanceListener(Entry).
