@@ -1,6 +1,8 @@
 # Contracts Here
-### A basic testing is done, everything goes well, and need out-of-gas testing.
-### In thinking of out-of-gas, the notify feature may move to offchain, maybe.
+A basic testing is done, everything goes well, and need out-of-gas testing.
+In thinking of out-of-gas, the notify feature may move to offchain, maybe.
+<br>
+
 ## MetapoBalance Contract
 Oracle call setBalance() for each account, and it'll notify the IBalanceListener(Entry).
 ### (write) setBalance
